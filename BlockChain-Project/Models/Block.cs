@@ -7,20 +7,16 @@ namespace BlockChain_Project.Models
 {
     public class Block
     {
-        public decimal Amount { get; set; }
+        public int Index { get; set; }
+        public DateTime TimeStamp { get; set; }
+        public List<Transaction> Transactions { get; set; }
+        public int Proof { get; set; }
 
-        public string Recipient { get; set; }
-
-        public string Sender { get; set; }
-
-        public string Signature { get; set; }
-
-        public decimal Fees { get; set; }
+        public string PreviousHash { get; set; }
 
         public override string ToString()
         {
-            return Amount.ToString("0.00000000") + Recipient + Sender;
-
+            return $"{Index} [{ TimeStamp.ToString("yyyy-MM-dd HH:mm:ss")}]  Proof : {Proof} PreviousHash : {PreviousHash}";
         }
 
     }
